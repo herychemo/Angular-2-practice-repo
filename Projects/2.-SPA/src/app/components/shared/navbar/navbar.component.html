@@ -22,7 +22,7 @@
             </li>
         </ul>
         <div class="form-inline my-2 my-lg-0" >
-            <input class="form-control mr-sm-2" type="text" placeholder="Search Hero" (keyup.enter)="buscarHeroe(buscarTexto.value); " #buscarTexto  />
+            <input class="form-control mr-sm-2" type="text" placeholder="Search Hero" (keyup)="buscarHeroe(buscarTexto.value);" (keyup.enter)="buscarHeroe(buscarTexto.value); " #buscarTexto  />
             <button class="btn btn-outline-primary my-2 my-sm-0" type="button"
                     (click)="buscarHeroe(buscarTexto.value);">Search</button>
         </div>
