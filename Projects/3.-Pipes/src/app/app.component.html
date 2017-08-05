@@ -113,6 +113,20 @@
                 <td>    capitalize:false    </td>
                 <td>    {{ nombre2 | capitalize:false }}    </td>
             </tr>
+            <tr>
+                <td>    {{ nombre }}    </td>
+                <td>
+                    contrasena:{{activar}}
+                    <button
+                        (click)="activar = !activar"
+                        type="button" 
+                        class="btn btn-outline-primary">
+                        <span *ngIf="!activar">Activar</span>
+                        <span *ngIf="activar">Desactivar</span>
+                    </button>
+                </td>
+                <td>    {{ nombre | contrasena:activar }}    </td>
+            </tr>
 
         </tbody>
     </table>

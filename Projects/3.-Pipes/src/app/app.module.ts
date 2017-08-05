@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 
 import {CapitalizePipe} from './pipes/capitalize.pipe';
 import { SecuredomPipe } from './pipes/securedom.pipe';
+import { ContrasenaPipe } from './pipes/contrasena.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CapitalizePipe,
-    SecuredomPipe
+    SecuredomPipe,
+    ContrasenaPipe
   ],
   imports: [
     BrowserModule
