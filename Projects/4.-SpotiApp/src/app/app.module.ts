@@ -14,13 +14,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
+import { CarouselComponent } from './components/shared/carousel/carousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
