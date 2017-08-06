@@ -6,6 +6,11 @@ body{
   padding-bottom: 50px;
 }
 
+.top-30{
+  margin-top: 30px;
+}
+
+
 hr{
   border-color: white;
 }
