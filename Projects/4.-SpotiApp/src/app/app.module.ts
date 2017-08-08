@@ -18,6 +18,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { CarouselComponent } from './components/shared/carousel/carousel.component';
+import { NophotoPipe } from './pipes/nophoto.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CarouselComponent } from './components/shared/carousel/carousel.compone
     NavbarComponent,
     HomeComponent,
     SearchComponent,
-    CarouselComponent
+    CarouselComponent,
+    NophotoPipe
   ],
   imports: [
     BrowserModule,

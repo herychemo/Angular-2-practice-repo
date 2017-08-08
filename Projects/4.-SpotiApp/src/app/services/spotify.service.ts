@@ -15,7 +15,7 @@ export class SpotifyService {
   constructor(private http:Http) { }
 
   getArtists(term:string){
-      let token = 'BQDbV5d6PisyFOmQnV4uUr_-he5FYQ70Ca7omf-_KGGRaU155Eby4dK0eoDQB4TJX9vcNg5h0gxjx1ODkb6cAw';
+      let token = 'BQDzGRd5oLccj7dePw4FhKFqtmszC7LqNod65rIhX5uHwarWKif9xTynTi5BoH2y-rFjFfnZNMRm7IxGuxNaHg';
       let headers = new Headers();
       headers.append( 'Authorization', `Bearer ${token}`);
 
