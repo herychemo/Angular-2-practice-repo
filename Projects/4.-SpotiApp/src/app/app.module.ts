@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+/** Extras */
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 /** Rutas */
 import {APP_ROUTING} from "./app.routes";
@@ -28,7 +30,8 @@ import { CarouselComponent } from './components/shared/carousel/carousel.compone
   imports: [
     BrowserModule,
     APP_ROUTING,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [
       SpotifyService

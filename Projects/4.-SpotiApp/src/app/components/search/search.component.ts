@@ -9,13 +9,15 @@ import {SpotifyService} from '../../services/spotify.service';
 })
 export class SearchComponent implements OnInit {
 
+    termi:string = '';
+
   constructor(private _SpotifyService:SpotifyService) { }
 
   ngOnInit() {
-      this._SpotifyService.getArtists("Dragon").subscribe( data => {
-          console.log("My Data");
-          console.log(data);
-      } );
+      //
+  }
+  searchArtist(){
+      this._SpotifyService.getArtists(this.termi).subscribe( );
   }
 
 }
