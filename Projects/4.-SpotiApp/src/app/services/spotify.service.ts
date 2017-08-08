@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { Http } from '@angular/http';
-import 'rxjx/add/operator/map'
+import { Http, Headers } from '@angular/http';
+import 'rxjs/add/operator/map'
+
+// current token: BQCY4tM_q_vWcwbfzniWCw-DwSsr020ujktVEap1xffw4KxHFDXfcoCeCyBj7FwXK-PWm0im0ChkMhgJhNNrKw
 
 @Injectable()
 export class SpotifyService {
@@ -13,12 +15,17 @@ export class SpotifyService {
   constructor(private http:Http) { }
 
   getArtists(term:string){
+      let headers = new Headers();
+      headers.append( 'Authorization', "Bearer BQAVSzzgATNVbMRarcnXQRMc7U-2iSWNKejV_UG84MxIipg76adqXfUFsFIAuiF6UrGDsrTn0dUBVs__GcmJvA" );
+
       let query = `?q=${term}&type=artist`;
       let url = this.urlSearch + query;
 
-      return this.http.get(url)
+      return this.http.get(url, {headers:headers})
                 .map( res => {
-                    console.log(res);
+                    this.artists = res.json().artists.items;
+                    console.log( this.artists );
+                    return this.artists
                 });
   }
 

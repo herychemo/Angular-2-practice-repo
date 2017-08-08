@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpModule } from '@angular/http';
 
 /** Rutas */
 import {APP_ROUTING} from "./app.routes";
 
 /** Servicios */
-
+import {SpotifyService} from "./services/spotify.service"
 
 
 /** Components */
@@ -26,9 +27,12 @@ import { CarouselComponent } from './components/shared/carousel/carousel.compone
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+      SpotifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
