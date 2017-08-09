@@ -11,13 +11,15 @@ export class SpotifyService {
     artists:any[] = [];
 
     urlSearch : string = "https://api.spotify.com/v1/search";
+    urlArtist : string = "https://api.spotify.com/v1/artists";
+
+    private token = 'BQBfV-ClAvdSh0XcKV7Yz7cVAEKOcn3mlSc1L6RRj7BcYfBzDF781wt1GALDhjbTtFz5Pz46VPOJquYJsaPEkA';
 
   constructor(private http:Http) { }
 
   getArtists(term:string){
-      let token = 'BQDzGRd5oLccj7dePw4FhKFqtmszC7LqNod65rIhX5uHwarWKif9xTynTi5BoH2y-rFjFfnZNMRm7IxGuxNaHg';
       let headers = new Headers();
-      headers.append( 'Authorization', `Bearer ${token}`);
+      headers.append( 'Authorization', `Bearer ${this.token}`);
 
       let query = `?q=${term}&type=artist`;
       let url = this.urlSearch + query;
@@ -28,6 +30,21 @@ export class SpotifyService {
                     console.log( this.artists );
                     return this.artists
                 });
+  }
+  getArtist(id:string){
+      let headers = new Headers();
+      headers.append( 'Authorization', `Bearer ${this.token}`);
+
+      let query = `/${id}`;
+      let url = this.urlArtist + query;
+
+      return this.http.get(url, {headers:headers})
+                .map( res =>{
+                    let artist = res.json();
+                    console.log( artist );
+                    return artist;
+                });
+
   }
 
 }

@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { CarouselComponent } from './components/shared/carousel/carousel.component';
 import { NophotoPipe } from './pipes/nophoto.pipe';
+import { ArtistComponent } from './components/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NophotoPipe } from './pipes/nophoto.pipe';
     HomeComponent,
     SearchComponent,
     CarouselComponent,
-    NophotoPipe
+    NophotoPipe,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,

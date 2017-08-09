@@ -18,7 +18,9 @@
     <div class="col-md-9">
 
       <div class="row">
-        <div class="col-md-3 text-center" *ngFor="let artist of _SpotifyService.artists" >
+        <div class="col-md-3 text-center puntero"
+            [routerLink]="['/artist', artist.id]"
+             *ngFor="let artist of _SpotifyService.artists" >
           <img [src]="artist.images[1]?.url | nophoto" [alt]="artist.name" class="img-fluid img-thumbnail" >
           <p>
             {{ artist.name }}
