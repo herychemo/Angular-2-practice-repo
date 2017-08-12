@@ -1,7 +1,34 @@
-<p>
-  artist works!
-</p>
 
-<pre>
-  {{artist | json}}
-</pre>
+<div class="container main-container">
+
+  <div class="row">
+
+    <div class=" col-md-2 col-sm-3 ">
+      <img [src]="artist?.images[0].url | nophoto" [alt]="artist?.name" class="rounded-circle img-fluid">
+    </div>
+    <div class="col-md-10 col-sm-9  card bg-inverse">
+      <div class="card-block">
+        <h4 class="card-title">{{ artist?.name }}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{ artist?.genres }}</h6>
+        <p class="card-text">
+          <b>Followers: </b>  <i>{{ artist?.followers.total }}</i>
+        </p>
+        <a [routerLink]="['/search']" class="card-link">Go Back To Search</a>
+        <a [href]="artist?.external_urls.spotify" class="card-link">Open in Spotify</a>
+      </div>
+    </div>
+
+    <hr class="col-12">
+
+    <h2>Top Tracks</h2>
+
+    <div class="row col-md-12 bottom-30" *ngFor="let track of top_tracks" >
+      <div class="col-2">
+          <img [src]="track.album.images[1]?.url | nophoto" alt="track.album.name" class="img-fluid ">
+      </div>
+      <h4 class="col-10">{{ track.name }}</h4>
+    </div>
+
+  </div>
+
+</div>
