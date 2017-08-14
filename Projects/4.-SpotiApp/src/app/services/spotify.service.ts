@@ -14,7 +14,7 @@ export class SpotifyService {
     private readonly CLIENT_ID = '94fe9dff5bb041b9b9f8fb20919df769';
     private readonly CLIENT_SECRET = '0f1f62121182434babcce82f55515c33';
 
-    private token = 'BQBo0f7Dq2j-HW9Ucw2pxv9hz0fOqFJqb3cq6V4aIhnJLwykU1hBpWM2Q5M3nIcG6zpSuzBoKX9d5dWnLSoH1A';
+    private token = 'BQAyDMT49BdBxaDh7CB9t9-Mt-qu9lfTGFKWohwWzZD5v6fXEjc_2eQ_AnzCdXVULYHg4_m63rH7fTkjW4pwRw';
 
   constructor(private http:Http) { }
 

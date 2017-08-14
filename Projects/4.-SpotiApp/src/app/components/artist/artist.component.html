@@ -8,25 +8,55 @@
     </div>
     <div class="col-md-10 col-sm-9  card bg-inverse">
       <div class="card-block">
-        <h4 class="card-title">{{ artist?.name }}</h4>
+        <h4 class="card-title">{{ artist?.name }} <small><i>{{ artist?.popularity | number:'.0-0' }}</i></small></h4>
         <h6 class="card-subtitle mb-2 text-muted">{{ artist?.genres }}</h6>
         <p class="card-text">
-          <b>Followers: </b>  <i>{{ artist?.followers.total }}</i>
+          <b>Followers: </b>  <i>{{ artist?.followers.total  | number:'.0-0' }}</i>
         </p>
         <a [routerLink]="['/search']" class="card-link">Go Back To Search</a>
         <a [href]="artist?.external_urls?.spotify" class="card-link">Open in Spotify</a>
       </div>
     </div>
 
+    <h2 class="top-30" >Top Tracks</h2>
     <hr class="col-12">
-    <h2>Top Tracks</h2>
 
-    <div class="row col-md-12 bottom-30" *ngFor="let track of top_tracks" >
-      <div class="col-2">
-          <img [src]="track.album.images[1]?.url | nophoto" alt="track.album.name" class="img-fluid ">
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="table-responsive">
+          <table class="table table-inverse table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Photo</th>
+                <th>Track</th>
+                <th>Popularity</th>
+                <th>Preview</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let track of top_tracks; let i = index;" >
+                <td>{{ i+1 }}</td>
+                <td> <img [src]="track.album.images[1]?.url | nophoto" alt="track.album.name" class="img-fluid img-50 "> </td>
+                <td> {{ track.name }} </td>
+                <td> {{ track.popularity }}% </td>
+                <td>
+                  <audio controls >
+                    <source [src]="track.preview_url" >
+                    Your Browser Is Old
+                  </audio>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
-      <h4 class="col-10">{{ track.name }}</h4>
+
     </div>
+
 
   </div>
 
