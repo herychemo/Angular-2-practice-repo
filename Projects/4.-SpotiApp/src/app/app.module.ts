@@ -11,6 +11,8 @@ import {APP_ROUTING} from "./app.routes";
 /** Servicios */
 import {SpotifyService} from "./services/spotify.service"
 
+/** Pipes */
+import { SecuredomPipe } from './pipes/securedom.pipe';
 
 /** Components */
 import { AppComponent } from './app.component';
@@ -29,7 +31,8 @@ import { ArtistComponent } from './components/artist/artist.component';
     SearchComponent,
     CarouselComponent,
     NophotoPipe,
-    ArtistComponent
+    ArtistComponent,
+    SecuredomPipe
   ],
   imports: [
     BrowserModule,
